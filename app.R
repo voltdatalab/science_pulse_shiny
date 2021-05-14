@@ -87,11 +87,10 @@ server <- function(input, output, session){
   ##################################
   # CONNECT TO DATABASE
 
-  # We remove the database credentials to avoid overuse for non-app related queries
   monitor_db <- dbPool(drv = "PostgreSQL", dbname = "monitordb",
-                       host = "",
-                       port = , user = "", password = "")
-
+                       host = "monitordb.c34gb8x0kzzf.us-east-1.rds.amazonaws.com",
+                       port = 5432, user = "applogin", password = "panteravenenosa2")
+  
   onStop(function() {
     poolClose(monitor_db)
   })
