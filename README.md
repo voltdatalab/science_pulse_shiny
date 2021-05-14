@@ -2,11 +2,11 @@
 
 [**Science Pulse**](https://sciencepulse.org/eng/) is a social listening platform of the scientific community on Twitter. It shows a collection of trending tweets from a list of relevant profiles over the last 12h, and makes available an archive of posts and information on those profiles.
 
-This is code for the [**Science Pulse**](https://nucleojor.shinyapps.io/science_pulse_eng/) web application, English version. The **Science Pulse** is distributed under the MIT License.
+This is the code for the [**Science Pulse**](https://nucleojor.shinyapps.io/science_pulse_eng/) web application, English version. The **Science Pulse** is distributed under the MIT License.
 
 ## About 
 
-The **Science Pulse** is a social listening app designed to bridge the gap between journalism and science in social media. Its goal is to help journalists to find scientific content trending on social media and get to know new experts/specialists.
+The **Science Pulse** is a social listening app designed to bridge the gap between journalism and science in social media. Its goal is to help journalists find scientific content trending on social media and get to know new experts/specialists.
 
 Scientists and journalists have a longstanding record of collaboration. But, as social media creates its own hard-to burst bubbles, sometimes a bridge is necessary to bring awareness about each other’s conversations. Journalists can benefit a lot from knowing what scientists and experts are sharing on social media.
 
@@ -22,25 +22,25 @@ This project is led by ICFJ Knight Fellow [Sérgio Spagnuolo](https://twitter.co
 
 ## How does it work?
 
-The **Science Pulse** app is a [Shiny](https://shiny.rstudio.com/)-built app, hosted it with [Shinyapps.io](https://www.shinyapps.io/). 
+The **Science Pulse** app is a [Shiny](https://shiny.rstudio.com/)-built app, hosted with [Shinyapps.io](https://www.shinyapps.io/). 
 
 Every 20 minutes, we extract all tweets posted by a list of around 1,500 Twitter accounts of experts, academics, research institutions and universities who tweet mainly in English, Portuguese and Spanish. This list is constantly updated (to include or remove accounts) and profiles are chosen by their posted content pertinence and/or their academic affiliation. 
 
 Tweets are extracted from the Twitter Free API, using the `rtweet` package. All tweets are stored in database, powered by [Postgres](https://www.postgresql.org/) and hosted on the Amazon Web Services cloud, from which we download the data to be used in the application. 
 
-The app is structured as a modularized `navbarPage`, and includes six main tabs, which we describe below. Each tab has specifically designed algorithms to improve the discovery of diverse content (for more information on the algorithms, read our methodology section). In most tabs, users should choose if they want to see tweets in English, Portuguese or Spanish. 
+The app is structured as a modularized `navbarPage`, and includes six main tabs, which we describe below. Each tab has specifically designed algorithms to improve the discovery of diverse content (for more information on the algorithms, read our [methodology](https://sciencepulse.org/eng/methodology) section). In most tabs, users should choose if they want to see tweets in English, Portuguese or Spanish. 
 
-Three tabs (**Trends**, **Explore** and **Covid-19 Special**) focus on revealing content from the last 12h, helping users to identify useful posts from the daily news cycle. The other two tabs incentivize users to dig deeper into our datasets. **Profiles** lets users find more information on the profiles we monitor and get recommendations of new profiles to follow. **Popularity** plots a graph so that user can compare engagement trends of up to 4 Twitter accounts. Finally, **Search Tweets** allow users to search for posts according to different filters and keywords.
+Three tabs (**Trends**, **Explore** and **Covid-19 Special**) focus on revealing content from the last 12h, helping users to identify useful posts from the daily news cycle. The other three tabs incentivize users to dig deeper into our datasets. **Profiles** lets users find more information on the profiles we monitor and get recommendations of new profiles to follow. **Popularity** plots a graph so that user can compare engagement trends of up to 4 Twitter accounts. Finally, **Search Tweets** allow users to search for posts according to different filters and keywords.
 
 ### Trends
 
 The app's main tab has three columns.The first two show trending tweets according to three different metrics: overperforming, popularity and discovery. They are designed to tap into different aspects of popularity and only consider posts written by the profiles we monitor: 
 
-Overperforming was based on Crowd Tangle's overperforming measure and focuses on identifying popular posts from an account, compared to the average number of interactions they usually get;
-Popularity ranks the most retweeted posts;
-Discovery ranks the tweets with the highest RT:followers ratio.
+* *Overperforming* was based on Crowd Tangle's overperforming measure and focuses on identifying popular posts from an account, compared to the average number of interactions they usually get;
+* *Popularity* ranks the most retweeted posts;
+* *Discovery* ranks the tweets with the highest RT:followers ratio.
 
-The last column (Radar) shows a random sample of five tweets from the last 12h. Users can sample new tweets by clicking on the button. This sample is also stratified in order to always show two tweets from non-male experts/academics.
+The last column (*Radar*) shows a random sample of five tweets from the last 12h. Users can sample new tweets by clicking on the button. This sample is also stratified in order to always show two tweets from non-male experts/academics.
 
 ### Explore
 
@@ -64,5 +64,5 @@ In this page, users can search for Tweets extracted by Science Pulse over the la
 
 ### Covid-19 Special
 
-Finally, this tab filters tweets according to more than 30 keywords related to Covid-19 (they are listed in our methodology). The columns displayed here are also used on the Trends and Explore tabs
+Finally, this tab filters tweets according to more than 30 keywords related to Covid-19 (they are listed in our [methodology](https://sciencepulse.org/eng/methodology)). The columns displayed here are also used on the Trends and Explore tabs.
 
