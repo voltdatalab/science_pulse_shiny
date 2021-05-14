@@ -75,7 +75,7 @@ mod_popularity_server <- function(id, base) {
           geom_step() +
           geom_smooth(alpha = 0.4,  se = FALSE, span = 1) +
           scale_x_datetime(breaks = scales::pretty_breaks(n = 6),
-                           labels = date_format("%m%d/\n%Y")) +
+                           labels = date_format("%m/%d/%Y")) +
           scale_y_continuous(labels = function(x) format(x, big.mark = ",", scientific = FALSE),
                              breaks = scales::pretty_breaks(n = 6)) +
           labs(x="",
@@ -118,7 +118,7 @@ mod_popularity_ui <- function(id){
 
                     tags$div(class = "sheet_header", style = "",
                              tags$h1("PROFILES' POPULARITY", style = "text-align:center"),
-                             tags$p("In this page you can see the popularity of certain users monitored by Science Pulse over time. You can search for up to 4 users across an 180-days interval.",
+                             tags$p("In this page you can see the popularity of certain users monitored by Science Pulse. You can search for up to 4 Twitter handles in an 180-days interval.",
                                     style = "font-family: 'Roboto Mono', monospace"),
                              tags$br()),
 
@@ -175,7 +175,7 @@ mod_popularity_ui <- function(id){
                                    text-decoration: underline;
                                    }")),
                                      tags$h1("ENGAGEMENT TREND"),
-                                     tags$div(tags$h4("The smoothed line represents the daily engagement trend, according to the selected rolling average", textOutput(ns("display_media_movel")), style="display:inline"))
+                                     tags$div(tags$h4("The smoothed line represents the daily engagement trend, according to the selected rolling average of", textOutput(ns("display_media_movel")), style="display:inline"))
                     ),
 
                     # Engagement rate
