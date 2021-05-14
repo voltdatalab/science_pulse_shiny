@@ -1,0 +1,128 @@
+<a id="feedbkbtn" class='button' href='#popup1'> ABOUT</a>
+
+<div id='popup1' class='overlay'>
+	<div class='popup'>
+		<h2>QUICK LINKS</h2>
+		<a class='close' href='#'>&times;</a>
+
+<ul>
+  <li><a href="https://forms.gle/PoWFuijTxYLR4Ppc6" target="_blank">Feedback form</a> - your opinion is <strong>very</strong> appreciated</li>
+  <li><a href='https://forms.gle/iQ7aYHqDyHicmx198' target='_blank'>Profile suggestion form</a></li>
+  <li><a href='https://sciencepulse.org/eng/methodology' target='_blank'>Complete methodology</a></li>
+  <li><a href='https://sciencepulse.org/eng/privacy' target='_blank'>Privacy policy and license</a></li>
+  <li>For other inquiries, reach us at <a href='mailto:sciencepulse@voltdata.info' target='_blank'>sciencepulse@voltdata.info</a></li>
+</ul>
+<hr>
+<p><strong>Science Pulse</strong> is a tool designed to bridge the gap between journalism and science in social media. It was built in English to reach a bigger audience and, for now, we focus mostly in <em>English</em> and in <em>Portuguese</em> languages, with some support for <em>Spanish</em>.</p>
+
+<p>It is better suited to work on desktop computers, but it also works on mobile.</p>
+
+<h4 style="padding: 8px 7px;background-color:#ededed;border-radius:5px"><a href="https://sciencepulse.org/eng/about" target="_blank">Learn more about us here.</a> </h4>
+
+<a href="https://www.icfj.org/" target="_blank"><img src="https://sciencepulse.org/img/icfj.png" alt="logo ICFJ" width="160px" style="padding-right:8px"></a>
+<a href="https://www.voltdata.info/" target="_blank"><img src="https://sciencepulse.org/img/volt.png" alt="logo Volt" width="120px"></a>&nbsp;&nbsp;&nbsp;
+<a href="https://abori.com.br/" target="_blank"><img src="https://sciencepulse.org/img/agenciabori.png" alt="logo Bori" width="60px"></a>
+	</div>
+</div>
+
+<style>
+.box {
+  width: 40%;
+  margin: 0;
+  background: rgba(255,255,255,0.2);
+  padding: 0 0 20px;
+  border: 2px solid #fff;
+  border-radius: 10;
+  background-clip: padding-box;
+  text-align: left;
+}
+
+.button{
+	color: #231f20;
+}
+
+.button:hover {
+  background: #1cd999;
+  color: #fff;
+	text-decoration: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #231f20;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.popup p{
+  color: #231f20 !important;
+  font-size: 16px !important;
+  text-transform: none;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.popup li {
+  text-align: left !important;
+  color: #231f20 !important;
+  font-size: 16px !important;
+  font-weight: 400;
+  text-transform: none;
+  margin-bottom: 10px;
+  max-width:80%;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+</style>
