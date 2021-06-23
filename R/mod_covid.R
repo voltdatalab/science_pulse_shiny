@@ -146,7 +146,7 @@ mod_covid_ui <- function(id){
 
     ### PAGE TITLE AND DESCRIPTION
     tags$div(class = "sheet_topper",
-             img(src = "header-pulse.svg", height = "", width = "100%"),
+             #img(src = "header-pulse.svg", height = "", width = "100%"),
 
              tags$div(class = "sheet_header", style = "font-family: 'Roboto Mono', monospace",
                       tags$h1("COVID-19 SPECIAL", style = "text-align:center"),

@@ -4,9 +4,9 @@
 html, body, iframe { height: 100%; }
 
 body{
-  background-color: #ffffff;
+  background-color: #eeeeee;
   font-family: 'Barlow', sans-serif;
-  padding: 2% 0 0 0;
+  padding: 0;
 }
 
 a{
@@ -168,7 +168,7 @@ p{
 }
 
 .navbar-default {
-    background-color: #fff;
+    background-color: #eeeeee;
     border-color: #fff;
     text-transform: uppercase;
     font-weight: 700;

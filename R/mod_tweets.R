@@ -154,7 +154,7 @@ mod_tweets_ui <- function(id){
 
     ### PAGE TITLE AND DESCRIPTION
     tags$div(class = "sheet_topper",
-             img(src = "header-pulse.svg", height = "", width = "100%"),
+             #img(src = "header-pulse.svg", height = "", width = "100%"),
              tags$div(class = "sheet_header", style = "font-family: 'Roboto Mono', monospace",
                       tags$h1("FIND TWEETS", style = "text-align:center"),
                       tags$p("In this page you can search for tweets in Science Pulse's database. You can apply several filters to narrow your discovery. Table is updated with new tweets and counts every 20 minutes. Since for now we stop updating older tweets, exact counts may vary from this table to actual tweets."),
