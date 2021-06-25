@@ -20,7 +20,7 @@ mod_trends_server <- function(id, base) {
       trends_dataset <- reactive({
 
         # Load trends view
-        sql_t <- "SELECT * from v_mod_trends"
+        sql_t <- "SELECT * from v_mod_trends_1"
         query_t <- sqlInterpolate(base, sql_t)
         trends <- as_tibble(dbGetQuery(base, query_t))
 
@@ -102,7 +102,7 @@ mod_trends_ui <- function(id){
 
              tags$div(class = "sheet_header", style = "font-family: 'Roboto Mono', monospace",
                       tags$h1("POPULAR TWEETS AND TRENDS", style = "text-align:center"),
-                      tags$p("The best fromt Science Pulse's monitored accounts over the last 12 hours. Each column curates content according to specific criteria. Explore them and find different tweets. Read",
+                      tags$p("The best from Science Pulse's monitored accounts over the last 12 hours. Each column curates content according to specific criteria. Explore them and find different tweets. Read",
                              tags$a("here", href="https://sciencepulse.org/eng/methodology", target="_blank"),
                              "about our algorithms."),
                       tags$br(),

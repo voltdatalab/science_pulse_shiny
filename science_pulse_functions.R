@@ -168,15 +168,14 @@ sample_more_than_one <- function(dataset){
     # Filter tweets with more than 1 RT
     filter(is_retweet == F,
            retweet_count > 1) %>%
-    # Sample tweets according to not_male column
-    group_by(not_male) %>%
+    group_by(group3) %>%
     sample_n(size = case_when(
-      not_male == "TRUE"   ~ 2,
-      not_male == "FALSE"  ~ 2,
-      is.na(not_male) ~ 1)) %>%
+      group3 == "TRUE"   ~ 2,
+      group3 == "FALSE"  ~ 2,
+      is.na(group3) ~ 1)) %>%
     ungroup() %>%
     # Arrange column to show not-male first
-    arrange(desc(not_male)) %>%
+    arrange(desc(group3)) %>%
     # Create and select only column with embed tweet code
     mutate(text = paste0('<blockquote class="twitter-tweet"><p lang="',
                          language, '" dir="ltr">',

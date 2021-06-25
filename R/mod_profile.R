@@ -17,11 +17,12 @@ mod_profile_server <- function(id, base) {
       ##################################################
       # LOAD EXPERTS DATA
       experts <- as_tibble(dbGetQuery(base, "select name_clean,screen_name,user_id,
-                                                    gender,type_ontology,race,
+                                                    gender,type_ontology,
                                                     google_scholar,known_affiliations,
-                                                    main_general_field, not_male, not_white,
+                                                    group1, group2,
+                                                    main_general_field, 
                                                     ver_location,verified,description,
-                                                    below_median,followers_count from v_experts_form_data"))
+                                                    below_median,followers_count from v_experts_form_data_1"))
 
       # Remove emojis and trim name column
       experts$name <- gsub('\\p{So}|\\p{Cn}', trimws(''),
@@ -133,20 +134,20 @@ mod_profile_server <- function(id, base) {
         experts %>%
           # Filter only pages below the median of followers
           filter(below_median == T) %>%
-          # Creates strata column binding not_male and not_white characteristics
-          mutate(estratificacao = paste(not_male, not_white)) %>%
+          # Creates strata column binding group characteristics
+          mutate(group3 = paste(group2, group1)) %>%
           # Sample one profile from each category
-          group_by(estratificacao) %>%
+          group_by(group3) %>%
           sample_n(size = case_when(
-            estratificacao == "TRUE TRUE"   ~ 1,  # Non-male, non-white
-            estratificacao == "FALSE TRUE"  ~ 1,  # Male, non-white
-            estratificacao == "TRUE FALSE"  ~ 1,  # Not-male, white
-            estratificacao == "FALSE FALSE" ~ 1,  # Male, white
-            estratificacao == "NA NA"       ~ 1)  # Institution
+            group3 == "TRUE TRUE"   ~ 1,
+            group3 == "TRUE FALSE"  ~ 1,
+            group3 == "FALSE TRUE"  ~ 1,
+            group3 == "FALSE FALSE" ~ 1,
+            group3 == "NA NA"       ~ 1)
             ) %>%
           ungroup() %>%
           # Order by showing non-male non-whites first
-          arrange(desc(estratificacao)) %>%
+          arrange(desc(group3)) %>%
           select(name, description, screen_name) %>%
           mutate(value_display = paste0("<h3 style='margin-top:0'><p><b>", name, "</b></p>",
                                         "@<a href='https://twitter.com/", screen_name, "' target='_blank' style='color: #d91c5c'>",

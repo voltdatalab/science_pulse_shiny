@@ -20,7 +20,7 @@ mod_tweets_server <- function(id, base) {
       tweets_dataset <- reactive({
 
         # Load tweets procedure
-        sql <- "select * from p_mod_tweets(?datum, ?datum2, ?language)"
+        sql <- "select * from p_mod_tweets_1(?datum, ?datum2, ?language)"
         query  <- sqlInterpolate(base, sql, language = input$language,
                                  datum = input$date[1], datum2 = input$date[2])
         tweets <- as_tibble(dbGetQuery(base, query))
